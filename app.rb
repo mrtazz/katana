@@ -1,8 +1,12 @@
 require 'guillotine'
+require 'redis'
 
 module Katana
     class App < Guillotine::App
-      adapter = Guillotine::Adapters::MemoryAdapter.new
+      # use redis adapter with redistogo
+      uri = URI.parse(ENV["REDISTOGO_URL"])
+      REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+      adapter = Guillotine::Adapters::RedisAdapter.new REDIS
       set :service => Guillotine::Service.new(adapter)
 
       # authenticate everything except GETs
@@ -13,7 +17,7 @@ module Katana
       end
 
       get '/' do
-        redirect 'https://google.com'
+        "Shorten all the URLs"
       end
 
       # helper methods

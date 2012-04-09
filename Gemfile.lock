@@ -6,6 +6,7 @@ GEM
       addressable (~> 2.2.6)
       sinatra (~> 1.2.6)
     rack (1.4.1)
+    redis (2.2.0)
     sinatra (1.2.8)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
@@ -16,3 +17,4 @@ PLATFORMS
 
 DEPENDENCIES
   guillotine
+  redis
