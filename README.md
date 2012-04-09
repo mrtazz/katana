@@ -5,15 +5,25 @@ Opinionated personal URL shortener which runs on [Heroku][1] and uses [Redis to
 go][2] as a backend. Shortening is done through the fabulous [Guillotine][3]
 engine and its Redis adapter.
 
+If you set `HTTP_USER` and `HTTP_PASS` all methods except `GETs` require basic
+authentication.
+
+## Usage
+You can use it exactly as any other guillotine app:
+
+    curl -X POST http://sho.rt --user foo:bar -i -F"url=http://github.com" -F"code=gh"
+
 ## Features
 - Authentication
-- Gauges support
+- Gauges support (to come)
 
 ## Setup
 
     git clone git://github.com/mrtazz/katana.git
     cd katana
-    heroku create --stack cedar
+    heroku create
+    heroku addons:add redistogo
+    heroku domains:add sho.rt
     git push heroku master
     # for gauges support
     heroku config:add GAUGES_TOKEN="token"
