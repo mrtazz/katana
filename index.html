@@ -51,8 +51,16 @@ authentication.</p>
 
 <p>You can use it exactly as any other guillotine app:</p>
 
-<pre><code>curl -X POST <a href="http://sho.rt">http://sho.rt</a> --user foo:bar -i -F"url=<a href="http://github.com">http://github.com</a>" -F"code=gh"
+<pre><code># with a generated code
+curl -X POST <a href="http://sho.rt">http://sho.rt</a> --user f:oo -i -F"url=<a href="http://github.com">http://github.com</a>"
+
+# or specify one
+curl -X POST <a href="http://sho.rt">http://sho.rt</a> --user f:oo -i -F"url=<a href="http://github.com">http://github.com</a>" \
+ -F"code=gh"
 </code></pre>
+
+<p> After that, visit <a href="http://sho.rt/gh">http://sho.rt/gh</a> in your
+browser and be redirected. </p>
 
 <h2>Features</h2>
 
