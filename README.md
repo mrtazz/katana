@@ -25,7 +25,7 @@ engine and its Redis adapter.
 
 ## Thanks
 [@technoweenie][4] for the awesome guillotine and [@roidrage][5] for
-[s3itch][6] from which somehow get me started on wanting an own URL shortener.
+[s3itch][6] which somehow got me started wanting a personal URL shortener.
 
 [1]: http://heroku.com
 [2]: http://redistogo.com
