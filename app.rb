@@ -26,7 +26,7 @@ module Katana
           status, head, body = settings.service.create(params[:url], params[:code])
 
           if loc = head['Location']
-            "{ shorturl: #{File.join("http://", request.host, loc)} }"
+            "{ shorturl : #{File.join("http://", request.host, loc)} }"
           else
             500
           end
