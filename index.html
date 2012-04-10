@@ -66,6 +66,7 @@ browser and be redirected. </p>
 
 <ul>
 <li>Authentication</li>
+<li>Custom Tweetbot compatible endpoint</li>
 <li>Gauges support (to come)</li>
 </ul><h2>Setup</h2>
 
@@ -80,6 +81,23 @@ git push heroku master
 heroku config:add HTTP_USER="theuser"
 heroku config:add HTTP_PASS="thepass"
 </code></pre>
+
+<h3>Tweetbot</h3>
+
+<p>There is a custom endpoint which is compatible with how tweetbot expects
+custom
+URL shorteners to behave. Activate it by setting</p>
+
+<pre><code>TWEETBOT_API=true
+</code></pre>
+
+<p>in your environment variables. After that you can add URLs with a
+<code>GET</code> to</p>
+
+<pre><code>http://sho.rt/api/create/?url=http://github.com
+</code></pre>
+
+<p>Keep in mind that this endpoint is not authenticated.</p>
 
 <h2>Thanks</h2>
 
