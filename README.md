@@ -15,6 +15,7 @@ You can use it exactly as any other guillotine app:
 
 ## Features
 - Authentication
+- Custom [Tweetbot][7] compatible endpoint
 - Gauges support (to come)
 
 ## Setup
@@ -32,6 +33,17 @@ You can use it exactly as any other guillotine app:
     heroku config:add HTTP_USER="theuser"
     heroku config:add HTTP_PASS="thepass"
 
+### Tweetbot
+There is a custom endpoint which is compatible with how tweetbot expects custom
+URL shorteners to behave. Activate it by setting
+
+    TWEETBOT_API=true
+
+in your environment variables. After that you can add URLs with a `GET` to
+
+    http://mrtz.cc/api/create/?url=http://github.com
+
+Keep in mind that this endpoint is not authenticated.
 
 ## Thanks
 [@technoweenie][4] for the awesome guillotine and [@roidrage][5] for
@@ -43,3 +55,4 @@ You can use it exactly as any other guillotine app:
 [4]: https://twitter.com/technoweenie
 [5]: https://twitter.com/roidrage
 [6]: https://github.com/mattmatt/s3itch
+[7]: http://tapbots.com/software/tweetbot/
