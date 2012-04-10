@@ -41,7 +41,7 @@ URL shorteners to behave. Activate it by setting
 
 in your environment variables. After that you can add URLs with a `GET` to
 
-    http://mrtz.cc/api/create/?url=http://github.com
+    http://sho.rt/api/create/?url=http://github.com
 
 Keep in mind that this endpoint is not authenticated.
 
