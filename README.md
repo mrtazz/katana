@@ -1,4 +1,4 @@
-# Katana
+# Katana [![Code Climate](https://codeclimate.com/github/mrtazz/katana.png)](https://codeclimate.com/github/mrtazz/katana)
 
 ## Overview
 Opinionated personal URL shortener which runs on [Heroku][1] and uses [Redis to
