@@ -8,6 +8,8 @@ engine and its Redis adapter.
 If you set `HTTP_USER` and `HTTP_PASS` all methods except `GETs` require basic
 authentication.
 
+If you set `ROOT_REDIRECTS_TO_URL` traffic that GETs '/' will get redirected there.
+
 ## Usage
 You can use it exactly as any other guillotine app:
 
@@ -32,6 +34,8 @@ You can use it exactly as any other guillotine app:
     # for authentication
     heroku config:add HTTP_USER="theuser"
     heroku config:add HTTP_PASS="thepass"
+    # for redirection
+    heroku config:add ROOT_REDIRECTS_TO_URL="http://www.yourlongerdomain.io"
 
 ### Tweetbot
 There is a custom endpoint which is compatible with how tweetbot expects custom
