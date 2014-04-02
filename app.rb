@@ -18,7 +18,11 @@ module Katana
       end
 
       get '/' do
-        "Shorten all the URLs"
+        if ENV['ROOT_REDIRECTS_TO_URL']
+          redirect ENV['ROOT_REDIRECTS_TO_URL']
+        else
+          "Shorten all the URLs"
+        end
       end
 
       if ENV['TWEETBOT_API']
