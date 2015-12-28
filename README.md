@@ -18,7 +18,6 @@ You can use it exactly as any other guillotine app:
 ## Features
 - Authentication
 - Custom [Tweetbot][7] compatible endpoint
-- Gauges support (to come)
 
 ## Setup
 
@@ -26,11 +25,10 @@ You can use it exactly as any other guillotine app:
     cd katana
     heroku create
     heroku addons:add redistogo
+    # or if you want to use Heroku redis
+    heroku addons:create heroku-redis:hobby-dev
     heroku domains:add sho.rt
     git push heroku master
-    # for gauges support
-    heroku config:add GAUGES_TOKEN="token"
-    heroku config:add GAUGES_GAUGE="gauge"
     # for authentication
     heroku config:add HTTP_USER="theuser"
     heroku config:add HTTP_PASS="thepass"
